@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+
+  dazn_mongo:
+    container_name: dazn_mongo
+    image: mongo
+    restart: always
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./_data/cache/mongo_data/:/data/db
+
+
+networks:
+  dazn:
+    driver: bridge
+
+
